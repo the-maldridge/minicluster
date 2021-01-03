@@ -1,6 +1,10 @@
+resource "docker_image" "proxy_dhcp" {
+  name = "quay.io/poseidon/dnsmasq:latest"
+}
+
 resource "docker_container" "proxy_dhcp" {
   name  = "proxy_dhcp"
-  image = "quay.io/poseidon/dnsmasq"
+  image = docker_image.proxy_dhcp.latest
 
   network_mode = "host"
   restart      = "always"
