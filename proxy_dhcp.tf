@@ -13,7 +13,7 @@ resource "docker_container" "proxy_dhcp" {
 
   command = [
     "-d", "-q",
-    "--dhcp-range=192.168.32.1,proxy,255.255.255.0",
+    "--dhcp-range=${cidrhost(var.subnet, 1)},proxy,${cidrnetmask(var.subnet)}",
     "--enable-tftp", "--tftp-root=/var/lib/tftpboot",
     "--dhcp-userclass=set:ipxe,iPXE",
     "--pxe-service=tag:#ipxe,x86PC,'PXE chainload to iPXE',undionly.kpxe",
