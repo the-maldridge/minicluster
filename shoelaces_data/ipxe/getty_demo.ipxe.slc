@@ -3,7 +3,7 @@
 
 imgfree
 
-kernel http://{{.baseURL}}/configs/static/getty_vmlinuz
+kernel http://{{.baseURL}}/configs/static/getty_vmlinuz console=tty0
 initrd http://{{.baseURL}}/configs/static/getty_initrd
 boot
 {{end}}
