@@ -1,0 +1,9 @@
+{{define "getty_demo.ipxe" -}}
+#!ipxe
+
+imgfree
+
+kernel http://{{.baseURL}}/configs/static/getty_vmlinuz
+initrd http://{{.baseURL}}/configs/static/getty_initrd
+boot
+{{end}}
