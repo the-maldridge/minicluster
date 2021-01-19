@@ -4,7 +4,7 @@ terraform {
       source = "kreuzwerker/docker"
     }
     linuxkit = {
-      source = "resinstack/linuxkit"
+      source  = "resinstack/linuxkit"
       version = "0.0.3"
     }
   }

@@ -1,0 +1,9 @@
+{{define "aio.ipxe" -}}
+#!ipxe
+
+imgfree
+
+kernel http://{{.baseURL}}/configs/static/aio_vmlinuz console=tty0
+initrd http://{{.baseURL}}/configs/static/aio_initrd
+boot
+{{end}}

@@ -25,7 +25,7 @@ resource "linuxkit_image_kernel_initrd" "getty" {
   build = linuxkit_build.getty.destination
   destination = {
     cmdline = "${path.module}/shoelaces_data/static/getty_cmdline"
-    kernel = "${path.module}/shoelaces_data/static/getty_vmlinuz"
-    initrd = "${path.module}/shoelaces_data/static/getty_initrd"
+    kernel  = "${path.module}/shoelaces_data/static/getty_vmlinuz"
+    initrd  = "${path.module}/shoelaces_data/static/getty_initrd"
   }
 }

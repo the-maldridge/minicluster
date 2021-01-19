@@ -46,7 +46,7 @@ data "linuxkit_image" "dhcpcd" {
 }
 
 data "linuxkit_image" "metadata" {
-  name  = "metadata"
-  image = "linuxkit/metadata:2cf1db0f0d2c9916b4894318bd76f1c97d8c8f7b"
+  name    = "metadata"
+  image   = "linuxkit/metadata:2cf1db0f0d2c9916b4894318bd76f1c97d8c8f7b"
   command = ["/usr/bin/metadata", "metaldata"]
 }
