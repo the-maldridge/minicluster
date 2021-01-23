@@ -1,0 +1,9 @@
+{{define "worker.ipxe" -}}
+#!ipxe
+
+imgfree
+
+kernel http://{{.baseURL}}/configs/static/worker_vmlinuz console=tty0
+initrd http://{{.baseURL}}/configs/static/worker_initrd
+boot
+{{end}}
