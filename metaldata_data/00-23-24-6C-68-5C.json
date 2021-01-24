@@ -1,1 +1,1 @@
-{"failure-domain":"S1R","hostname":"node2","machine-type":"m73-tiny","private-ipv4":"192.168.32.11"}
+{"failure-domain":"S1R","hostname":"node2","machine-type":"m73-tiny","private-ipv4":"192.168.32.11","role":"aio"}

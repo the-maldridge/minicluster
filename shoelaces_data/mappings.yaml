@@ -1,2 +1,32 @@
----
-networkMaps:
+"hostnameMaps":
+- "hostname": "node1.lan"
+  "script":
+    "name": "aio.ipxe"
+- "hostname": "node4.lan"
+  "script":
+    "name": "worker.ipxe"
+- "hostname": "node10.lan"
+  "script":
+    "name": "worker.ipxe"
+- "hostname": "node2.lan"
+  "script":
+    "name": "aio.ipxe"
+- "hostname": "node7.lan"
+  "script":
+    "name": "worker.ipxe"
+- "hostname": "node8.lan"
+  "script":
+    "name": "worker.ipxe"
+- "hostname": "node6.lan"
+  "script":
+    "name": "worker.ipxe"
+- "hostname": "node3.lan"
+  "script":
+    "name": "aio.ipxe"
+- "hostname": "node9.lan"
+  "script":
+    "name": "worker.ipxe"
+- "hostname": "node5.lan"
+  "script":
+    "name": "worker.ipxe"
+"networkMaps": []

@@ -1,1 +1,1 @@
-{"failure-domain":"S4R","hostname":"node8","machine-type":"m73-tiny","private-ipv4":"192.168.32.17"}
+{"failure-domain":"S4R","hostname":"node8","machine-type":"m73-tiny","private-ipv4":"192.168.32.17","role":"worker"}
