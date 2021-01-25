@@ -1,1 +1,1 @@
-{"consul":{"entries":{"10-aio.hcl":{"content":"bootstrap_expect = 3\ndatacenter = \"minicluster\"\nretry_join = [\"node1\", \"node2\", \"node3\"]\n"}}}}
+{"consul":{"entries":{"10-aio.hcl":{"content":"bootstrap_expect = 3\ndatacenter = \"minicluster\"\nretry_join = [\"node1\", \"node2\", \"node3\"]\n"}}},"nomad":{"entries":{"10-aio.hcl":{"content":"datacenter = \"MINICLUSTER-CONTROL\"\n\nserver {\n  bootstrap_expect = 3\n}\n"}}}}
