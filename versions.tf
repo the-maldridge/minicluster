@@ -5,7 +5,7 @@ terraform {
     }
     linuxkit = {
       source  = "resinstack/linuxkit"
-      version = "0.0.3"
+      version = "0.0.4"
     }
   }
   required_version = ">= 0.13"

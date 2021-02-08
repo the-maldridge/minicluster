@@ -54,10 +54,10 @@ provider "registry.terraform.io/kreuzwerker/docker" {
 }
 
 provider "registry.terraform.io/resinstack/linuxkit" {
-  version     = "0.0.3"
-  constraints = "0.0.3"
+  version     = "0.0.4"
+  constraints = "0.0.4"
   hashes = [
-    "h1:EnvCO8p7o2EQ388USZxqoiJx3TR5bskrG+yiJk1AKyo=",
-    "zh:82e7c286e4d3baabb49a5da5d587f9f4af59878dffd3b4c8af6ba0bfe7036ebe",
+    "h1:ma4oYKxXo4aInxp+q4i/mNLAKnSaPJRtn+4wU0cQhiQ=",
+    "zh:249824b41b4c7dcaee88950818e7e5aa621dc78486ee0a6f1551800be8d919a4",
   ]
 }
