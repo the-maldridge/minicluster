@@ -1,5 +1,5 @@
 module "aio_metadata" {
-  source = "../terraform-local-metadata"
+  source = "../../terraform-local-metadata"
 
   cluster_tag = "minicluster"
   base_path = "${path.module}/metadata/aio"

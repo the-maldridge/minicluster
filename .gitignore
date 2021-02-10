@@ -1,8 +1,6 @@
 .terraform/
 *tfstate*
-matchbox/
 
-metaldata_data/*userdata
-metaldata_data/*json
-
-metadata/**/*gen*
+metal/metaldata_data/*userdata
+metal/metaldata_data/*json
+metal/metadata/**/*gen*
