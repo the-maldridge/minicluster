@@ -1,1 +1,0 @@
-{"consul":{"entries":{"10-aio.hcl":{"content":"bootstrap_expect = 3\ndatacenter = \"minicluster\"\nretry_join = [\"node1\", \"node2\", \"node3\"]\n"}}},"nomad":{"entries":{"10-aio.hcl":{"content":"datacenter = \"MINICLUSTER\"\n\nserver {\n  bootstrap_expect = 3\n}\n\nclient {\n  host_volume \"logs\" {\n    path = \"/run/log/onboot\"\n    read_only = true\n  }\n}\n"}}}}

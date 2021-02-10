@@ -1,1 +1,0 @@
-{"authorized-keys":"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJF8AaB2XHzVqIaT6c2T62LItvnhs2InOw8jcwD/T20u maldridge@bootmaster\n","failure-domain":"S2R","hostname":"node4","machine-type":"m73-tiny","private-ipv4":"192.168.32.13","role":"worker"}

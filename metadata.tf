@@ -1,3 +1,15 @@
+module "aio_metadata" {
+  source = "../terraform-local-metadata"
+
+  cluster_tag = "minicluster"
+  base_path = "${path.module}/metadata/aio"
+  secret_provider = "insecure"
+
+  consul_server = true
+  consul_retry_join = ["node1", "node2", "node3"]
+  consul_datacenter = "minicluster"
+}
+
 data "linuxkit_metadata" "aio" {
   base_path = "${path.module}/metadata/aio"
 }

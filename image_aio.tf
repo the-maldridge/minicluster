@@ -9,11 +9,12 @@ module "aio_server" {
   enable_ntpd = true
 
   consul_server = true
-  consul_acl    = "allow"
+  consul_acl    = "deny"
 
   nomad_server  = true
   nomad_client  = true
   enable_docker = true
+  nomad_acl = false
 
   output_to = "${path.root}/shoelaces_data/static"
   base_name = "aio"

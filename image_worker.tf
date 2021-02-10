@@ -10,6 +10,7 @@ module "worker" {
 
   nomad_client  = true
   enable_docker = true
+  nomad_acl = false
 
   output_to = "${path.root}/shoelaces_data/static"
   base_name = "worker"
