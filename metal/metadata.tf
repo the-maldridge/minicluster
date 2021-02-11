@@ -1,13 +1,18 @@
 module "aio_metadata" {
   source = "../../terraform-local-metadata"
 
-  cluster_tag = "minicluster"
-  base_path = "${path.module}/metadata/aio"
+  cluster_tag     = "minicluster"
+  base_path       = "${path.module}/metadata/aio"
   secret_provider = "insecure"
 
-  consul_server = true
+  consul_server     = true
   consul_retry_join = ["node1", "node2", "node3"]
   consul_datacenter = "minicluster"
+
+  vault_server = true
+
+  nomad_server     = true
+  nomad_datacenter = "minicluster"
 }
 
 data "linuxkit_metadata" "aio" {
@@ -25,6 +30,21 @@ resource "local_file" "aio_metadata" {
   filename = "${path.root}/metaldata_data/${each.value}.userdata"
 
   file_permission = "0644"
+}
+
+module "worker_metadata" {
+  source = "../../terraform-local-metadata"
+
+  cluster_tag     = "minicluster"
+  base_path       = "${path.module}/metadata/worker"
+  secret_provider = "insecure"
+
+  consul_agent      = true
+  consul_retry_join = ["node1", "node2", "node3"]
+  consul_datacenter = "minicluster"
+
+  nomad_client     = true
+  nomad_datacenter = "minicluster"
 }
 
 data "linuxkit_metadata" "worker" {

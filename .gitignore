@@ -4,3 +4,5 @@
 metal/metaldata_data/*userdata
 metal/metaldata_data/*json
 metal/metadata/**/*gen*
+
+cpolicy/state/
