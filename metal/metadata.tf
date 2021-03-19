@@ -12,7 +12,7 @@ module "aio_metadata" {
   vault_server = true
 
   nomad_server     = true
-  nomad_datacenter = "minicluster"
+  nomad_datacenter = "minicluster-control"
 }
 
 data "linuxkit_metadata" "aio" {

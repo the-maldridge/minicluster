@@ -17,7 +17,6 @@ module "aio_server" {
   nomad_acl     = true
 
   vault_server      = true
-  vault_tls_disable = true
 
   output_to = "${path.root}/shoelaces_data/static"
   base_name = "aio"
