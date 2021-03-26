@@ -14,8 +14,17 @@ module "worker" {
 
   nomad_vault_integration = true
 
+  custom_files = [data.linuxkit_file.worker_kill_timeout.id]
+
   output_to = "${path.root}/shoelaces_data/static"
   base_name = "worker"
 
   build_pxe = true
+}
+
+data "linuxkit_file" "worker_kill_timeout" {
+  contents = "client {\n\tmax_kill_timeout = \"30m\"\n}\n"
+  path = "etc/nomad/50-timeout.hcl"
+  mode = "0644"
+  optional = false
 }
