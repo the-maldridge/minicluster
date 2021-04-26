@@ -2,9 +2,9 @@
 
 mkdir -p state
 
-export CONSUL_HTTP_ADDR=http://node1:8500
-export NOMAD_ADDR=http://node1:4646
-export VAULT_ADDR=http://node1:8200
+export CONSUL_HTTP_ADDR=http://192.168.32.10:8500
+export NOMAD_ADDR=http://192.168.32.10:4646
+export VAULT_ADDR=http://192.168.32.10:8200
 
 if [ ! -f state/consul_done ] ; then
     if [ ! -f secrets/resinstack-consul-gossip-key-minicluster ] ; then
@@ -44,7 +44,7 @@ if [ ! -f state/vault_done ] ; then
 
     export VAULT_UNSEAL_KEY=$(jq -r .unseal_keys_hex[0] < state/vault_bootstrap.json)
     for i in 1 2 3 ; do
-        VAULT_ADDR=http://node$i:8200 vault operator unseal $VAULT_UNSEAL_KEY
+        VAULT_ADDR=http://192.168.32.$((9+$i)):8200 vault operator unseal $VAULT_UNSEAL_KEY
     done
 
     export VAULT_TOKEN=$(jq -r .root_token < state/vault_bootstrap.json)

@@ -6,7 +6,7 @@ module "aio_metadata" {
   secret_provider = "insecure"
 
   consul_server     = true
-  consul_retry_join = ["node1", "node2", "node3"]
+  consul_retry_join = ["node1.lan", "node2.lan", "node3.lan"]
   consul_datacenter = "minicluster"
 
   vault_server = true
@@ -40,7 +40,7 @@ module "worker_metadata" {
   secret_provider = "insecure"
 
   consul_agent      = true
-  consul_retry_join = ["node1", "node2", "node3"]
+  consul_retry_join = ["node1.lan", "node2.lan", "node3.lan"]
   consul_datacenter = "minicluster"
 
   nomad_client     = true
