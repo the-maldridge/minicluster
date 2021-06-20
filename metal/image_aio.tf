@@ -8,9 +8,11 @@ module "aio_server" {
   enable_sshd    = true
   enable_ntpd    = true
 
+  consul_version = "1.10.0-rc2"
   consul_server = true
   consul_acl    = "deny"
 
+  nomad_version = "v1.1.1r0"
   nomad_server  = true
   nomad_client  = true
   enable_docker = true

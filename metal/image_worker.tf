@@ -8,6 +8,9 @@ module "worker" {
   enable_sshd    = true
   enable_ntpd    = true
 
+  consul_version = "1.10.0-rc2"
+
+  nomad_version = "v1.1.1r0"
   nomad_client  = true
   enable_docker = true
   nomad_acl     = true
