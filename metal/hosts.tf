@@ -7,7 +7,7 @@ locals {
       failure-domain  = "S1L"
       machine-type    = "m73-tiny"
       role            = "aio"
-      authorized-keys = file(pathexpand("~/.ssh/id_ed25519.pub"))
+      authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 
     "00-23-24-6C-68-5C" = {
@@ -16,7 +16,7 @@ locals {
       failure-domain  = "S1R"
       machine-type    = "m73-tiny"
       role            = "aio"
-      authorized-keys = file(pathexpand("~/.ssh/id_ed25519.pub"))
+      authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 
     "00-23-24-79-02-CB" = {
@@ -25,7 +25,7 @@ locals {
       failure-domain  = "S2L"
       machine-type    = "m73-tiny"
       role            = "aio"
-      authorized-keys = file(pathexpand("~/.ssh/id_ed25519.pub"))
+      authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 
     "00-23-24-64-1D-59" = {
@@ -34,7 +34,7 @@ locals {
       failure-domain  = "S2R"
       machine-type    = "m73-tiny"
       role            = "worker"
-      authorized-keys = file(pathexpand("~/.ssh/id_ed25519.pub"))
+      authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 
     "D8-CB-8A-20-92-E6" = {
@@ -43,7 +43,7 @@ locals {
       failure-domain  = "S3L"
       machine-type    = "m73-tiny"
       role            = "worker"
-      authorized-keys = file(pathexpand("~/.ssh/id_ed25519.pub"))
+      authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 
     "00-23-24-78-24-39" = {
@@ -52,7 +52,7 @@ locals {
       failure-domain  = "S3R"
       machine-type    = "m73-tiny"
       role            = "worker"
-      authorized-keys = file(pathexpand("~/.ssh/id_ed25519.pub"))
+      authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 
     "00-23-24-76-8B-ED" = {
@@ -61,7 +61,7 @@ locals {
       failure-domain  = "S4L"
       machine-type    = "m73-tiny"
       role            = "worker"
-      authorized-keys = file(pathexpand("~/.ssh/id_ed25519.pub"))
+      authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 
     "00-23-24-76-C6-A3" = {
@@ -70,7 +70,7 @@ locals {
       failure-domain  = "S4R"
       machine-type    = "m73-tiny"
       role            = "worker"
-      authorized-keys = file(pathexpand("~/.ssh/id_ed25519.pub"))
+      authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 
     "00-23-24-79-02-FA" = {
@@ -79,7 +79,7 @@ locals {
       failure-domain  = "S5L"
       machine-type    = "m73-tiny"
       role            = "worker"
-      authorized-keys = file(pathexpand("~/.ssh/id_ed25519.pub"))
+      authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 
     "00-23-24-69-DF-C4" = {
@@ -88,7 +88,7 @@ locals {
       failure-domain  = "S5R"
       machine-type    = "m73-tiny"
       role            = "worker"
-      authorized-keys = file(pathexpand("~/.ssh/id_ed25519.pub"))
+      authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 
   }
