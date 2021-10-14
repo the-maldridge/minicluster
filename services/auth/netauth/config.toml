@@ -1,0 +1,18 @@
+[core]
+  home = "/netauth/data"
+  conf = "/netauth/data"
+  server = "bootmaster.lan"
+
+[tls]
+  pwn_me = true
+
+[token]
+  [token.jwt]
+    generate = true
+
+[server]
+  bind = "0.0.0.0"
+
+[ldap]
+  bind = "0.0.0.0:389"
+  domain = "minicluster.lan"

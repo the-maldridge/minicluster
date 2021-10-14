@@ -1,0 +1,52 @@
+---
+issuer: http://localhost:5556
+enablePasswordDB: false
+
+storage:
+  type: sqlite3
+  config:
+    file: ":memory:"
+      
+web:
+  http: 0.0.0.0:5556
+frontend:
+  issuer: dex
+  logoURL: theme/logo.png
+  dir: ""
+  theme: dark
+connectors:
+  - type: ldap
+    id: netauth
+    name: NetAuth
+    config:
+      host: bootmaster.lan:389
+      insecureNoSSL: true
+
+      usernamePrompt: NetAuth Credentials
+
+      bindDN: uid=dex,ou=entities,dc=netauth,dc=minicluster,dc=lan
+      bindPW: dex
+      
+      userSearch:
+        baseDN: ou=entities,dc=netauth,dc=minicluster,dc=lan
+
+        username: uid
+        idAttr: uid
+        nameAddr: uid
+        emailSuffix: netauth.minicluster.lan
+
+      groupSearch:
+        baseDN: ou=groups,dc=netauth,dc=minicluster,dc=lan
+
+        userMatchers:
+          - userAttr: DN
+            groupAttr: member
+
+        # Represents group name.
+        nameAttr: cn
+staticClients:
+  - name: 'Boundary'
+    redirectURIs:
+      - 'http://localhost:9200/v1/auth-methods/oidc:authenticate:callback'
+    id: 05BOFZC6EE
+    secret: BSM4VV3DAL
