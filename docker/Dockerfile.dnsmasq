@@ -3,7 +3,6 @@ FROM alpine:3.12
 WORKDIR /tftproot
 
 RUN apk add --no-cache dnsmasq && \
-        wget http://boot.ipxe.org/undionly.kpxe && \
-        wget http://boot.ipxe.org/ipxe.efi
+        wget http://boot.ipxe.org/undionly.kpxe
 
 ENTRYPOINT ["/usr/sbin/dnsmasq"]

@@ -8,14 +8,13 @@ resource "docker_container" "dnsmasq" {
 
   command = [
     "-d", "-q",
+    "-p", "0",
     "--dhcp-range=${cidrhost(var.subnet, 2)},proxy,${cidrnetmask(var.subnet)}",
     "--enable-tftp",
     "--tftp-root=/tftproot",
     "--dhcp-userclass=set:ipxe,iPXE",
     "--pxe-service=tag:#ipxe,x86PC,'PXE chainload to iPXE',undionly.kpxe",
     "--pxe-service=tag:ipxe,x86PC,'iPXE',http://${var.shoelaces_host}:8081/poll/1/$${netX/mac:hexhyp}",
-    "--pxe-service=tag:#ipxe,X86-64_EFI,'PXE chainload to iPXE UEFI',ipxe.efi",
-    "--pxe-service=tag:ipxe,X86-64_EFI,'iPXE UEFI',http://${var.shoelaces_host}:8081/poll/1/$${netX/mac:hexhyp}",
   ]
 
   capabilities {
