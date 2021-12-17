@@ -8,10 +8,11 @@ module "worker" {
   enable_sshd    = true
   enable_ntpd    = true
 
-  nomad_version = "v1.1.4r1"
+  nomad_version = "v1.2.0b1r0"
   nomad_client  = true
   enable_docker = true
   nomad_acl     = true
+  nomad_mkdirs = ["/var/persist/volumes/void-packages"]
 
   nomad_vault_integration = true
 

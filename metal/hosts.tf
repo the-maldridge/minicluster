@@ -15,7 +15,7 @@ locals {
       private-ipv4    = "192.168.32.11"
       failure-domain  = "S1R"
       machine-type    = "m73-tiny"
-      role            = "aio"
+      role            = "worker"
       authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 
@@ -24,7 +24,7 @@ locals {
       private-ipv4    = "192.168.32.12"
       failure-domain  = "S2L"
       machine-type    = "m73-tiny"
-      role            = "aio"
+      role            = "worker"
       authorized-keys = file(pathexpand("~/.ssh/minicluster_fleet.pub"))
     }
 

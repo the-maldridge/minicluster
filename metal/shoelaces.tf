@@ -6,7 +6,7 @@ resource "docker_container" "shoelaces" {
   name  = "shoelaces"
   image = docker_image.shoelaces.latest
 
-  command = ["-base-url=bootmaster.lan:8081"]
+  command = ["-base-url=bootmaster.lan:8081", "-debug=true"]
 
   volumes {
     container_path = "/data"
