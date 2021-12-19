@@ -12,7 +12,7 @@ module "worker" {
   nomad_client  = true
   enable_docker = true
   nomad_acl     = true
-  nomad_mkdirs = ["/var/persist/volumes/void-packages"]
+  nomad_mkdirs  = ["/var/persist/volumes/void-packages"]
 
   nomad_vault_integration = true
 
@@ -26,7 +26,7 @@ module "worker" {
 
 data "linuxkit_file" "worker_kill_timeout" {
   contents = "client {\n\tmax_kill_timeout = \"30m\"\n}\n"
-  path = "etc/nomad/50-timeout.hcl"
-  mode = "0644"
+  path     = "etc/nomad/50-timeout.hcl"
+  mode     = "0644"
   optional = false
 }

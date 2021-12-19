@@ -13,10 +13,7 @@ resource "docker_container" "shoelaces" {
     host_path      = abspath(join("/", [path.root, "shoelaces_data"]))
   }
 
-  ports {
-    internal = 8081
-    external = 8081
-  }
+  network_mode = "host"
 
   restart  = "always"
   start    = true

@@ -5,15 +5,15 @@ module "aio_metadata" {
   base_path       = "${path.module}/metadata/aio"
   secret_provider = "insecure"
 
-  consul_server     = true
-  consul_retry_join = ["node1.lan"]
-  consul_datacenter = "minicluster"
+  consul_server           = true
+  consul_retry_join       = ["node1.lan"]
+  consul_datacenter       = "minicluster"
   consul_bootstrap_expect = 1
 
   vault_server = true
 
-  nomad_server     = true
-  nomad_datacenter = "minicluster-control"
+  nomad_server           = true
+  nomad_datacenter       = "minicluster-control"
   nomad_bootstrap_expect = 1
 }
 

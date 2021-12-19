@@ -16,9 +16,9 @@ module "aio_server" {
   nomad_client  = true
   enable_docker = true
   nomad_acl     = true
-  nomad_mkdirs = ["/var/persist/volumes/void-packages"]
+  nomad_mkdirs  = ["/var/persist/volumes/void-packages"]
 
-  vault_server      = true
+  vault_server = true
 
   output_to = "${path.root}/shoelaces_data/static"
   base_name = "aio"

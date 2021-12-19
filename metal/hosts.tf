@@ -105,7 +105,7 @@ resource "local_file" "metadata" {
 
 resource "local_file" "shoelaces_mappings" {
   content = yamlencode({
-    networkMaps  = []
+    networkMaps  = [for host, attrs in local.hosts : { network = "${attrs.private-ipv4}/32", script = { name = "${attrs.role}.ipxe" } }]
     hostnameMaps = [for host, attrs in local.hosts : { hostname = "${attrs.hostname}.lan", script = { name = "${attrs.role}.ipxe" } }]
   })
 
