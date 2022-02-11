@@ -2,19 +2,20 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/hashicorp/local" {
-  version = "2.0.0"
+  version = "2.1.0"
   hashes = [
-    "h1:EC6eh7avwx1rF56h3RZcxgEp/14ihi7Sk/4J3Hn4nIE=",
-    "zh:34ce8b79493ace8333d094752b579ccc907fa9392a2c1d6933a6c95d0786d3f1",
-    "zh:5c5a19c4f614a4ffb68bae0b0563f3860115cf7539b8adc21108324cfdc10092",
-    "zh:67ddb1ca2cd3e1a8f948302597ceb967f19d2eeb2d125303493667388fe6330e",
-    "zh:68e6b16f3a8e180fcba1a99754118deb2d82331b51f6cca39f04518339bfdfa6",
-    "zh:8393a12eb11598b2799d51c9b0a922a3d9fadda5a626b94a1b4914086d53120e",
-    "zh:90daea4b2010a86f2aca1e3a9590e0b3ddcab229c2bd3685fae76a832e9e836f",
-    "zh:99308edc734a0ac9149b44f8e316ca879b2670a1cae387a8ae754c180b57cdb4",
-    "zh:c76594db07a9d1a73372a073888b672df64adb455d483c2426cc220eda7e092e",
-    "zh:dc09c1fb36c6a706bdac96cce338952888c8423978426a09f5df93031aa88b84",
-    "zh:deda88134e9780319e8de91b3745520be48ead6ec38cb662694d09185c3dac70",
+    "h1:EYZdckuGU3n6APs97nS2LxZm3dDtGqyM4qaIvsmac8o=",
+    "zh:0f1ec65101fa35050978d483d6e8916664b7556800348456ff3d09454ac1eae2",
+    "zh:36e42ac19f5d68467aacf07e6adcf83c7486f2e5b5f4339e9671f68525fc87ab",
+    "zh:6db9db2a1819e77b1642ec3b5e95042b202aee8151a0256d289f2e141bf3ceb3",
+    "zh:719dfd97bb9ddce99f7d741260b8ece2682b363735c764cac83303f02386075a",
+    "zh:7598bb86e0378fd97eaa04638c1a4c75f960f62f69d3662e6d80ffa5a89847fe",
+    "zh:ad0a188b52517fec9eca393f1e2c9daea362b33ae2eb38a857b6b09949a727c1",
+    "zh:c46846c8df66a13fee6eff7dc5d528a7f868ae0dcf92d79deaac73cc297ed20c",
+    "zh:dc1a20a2eec12095d04bf6da5321f535351a594a636912361db20eb2a707ccc4",
+    "zh:e57ab4771a9d999401f6badd8b018558357d3cbdf3d33cc0c4f83e818ca8e94b",
+    "zh:ebdcde208072b4b0f8d305ebf2bfdc62c926e0717599dcf8ec2fd8c5845031c3",
+    "zh:ef34c52b68933bedd0868a13ccfd59ff1c820f299760b3c02e008dc95e2ece91",
   ]
 }
 
@@ -36,28 +37,31 @@ provider "registry.terraform.io/hashicorp/template" {
 }
 
 provider "registry.terraform.io/kreuzwerker/docker" {
-  version = "2.11.0"
+  version = "2.16.0"
   hashes = [
-    "h1:2BuPcSQY9DSRhPufzrbiGyMW2NX1qqXkH1KfzrMUQmU=",
-    "zh:1b9d93385cc0329467725ce90affc76a361bc23384a7358431e6ee281ae323de",
-    "zh:21a327746cdad2abfc22df3d72eb9b36134bb7daeb72b2a52112adfd3a39555a",
-    "zh:31ed477f429686015271188b03e89bfc400b74eea9e83956ea4cc16018b561f3",
-    "zh:4302d65b5cbedbe42cf35094748058aea44f75dd7ec2b257330b5f60a2521def",
-    "zh:43f53e3e29070dfec0621915d0a5266c386f7416f6a719531b7c55924cefd280",
-    "zh:4bf7704bf46868edd834991f350aa6204c72397be1e1a784278391bb911e29f5",
-    "zh:503434ddf9c801aa9a9e47e76b6b5758dd4583a49f7ac373066430b37b3efcaf",
-    "zh:67410f9ed6503692121519b81e13cf5274ceadb5566bf2ec2dc0a6e43c700621",
-    "zh:c0fd724ed8da52375976c3595a2a6748bf28c07ec881ad7154e657ab5c38f25b",
-    "zh:cbe762d96c4ae61c42d8c02c047954b52a6567b214a0263345135baf249accd7",
-    "zh:d3a23b086199d4a2a63707f28c0da8b392d8d11281c6881d85a959e76626fb7e",
+    "h1:OcTn2QyCQNjDiJYy1vqQFmz2dxJdOF/2/HBXBvGxU2E=",
+    "zh:0ff8aa7884c6dae90e6f245bb9d37898735f89e095ba53413f2f364db4d11a77",
+    "zh:4101f4c909477f3a8225829b7063e5c5a2e2986a6163e0f113af040b5feab61f",
+    "zh:59db110d2b6c620cc12a1741d81ed8d1dd7fb0540024428fefbb57e8bebe5b60",
+    "zh:6e134983f195ea0273ac042f0a2df14158d676a24e8dd140ca0357f3efc3fd61",
+    "zh:7de1de3cc1eacb2ef2693207f5c5f54fa4814ae8c024b8b3c2a0923c82fd6f14",
+    "zh:a6659fbc7c45fbb60c7c9bf06724eb6084711f1b79c720ef8512a4367e63cbe5",
+    "zh:ae97c721431517d8c71f8cede91d734d2f2372a1bfef0c3bba43b54c0f8b1cee",
+    "zh:b3cbd47d5f0cb522b6dd3561ccd2f491fb6afb577372718e0663d12cfeef30e9",
+    "zh:b64af7c6ad8870c11677874f6cd13322aa03d2190391a120be17304ca324ea1c",
+    "zh:c363747bae968af997eaf22193168451523e92b59aee8aee135d3b27db132366",
+    "zh:c40721250642157b2a72d8db44fa09de0f7635ba4b0e2ebf5527570f3988e62f",
+    "zh:e97707609e346bf463d539099faa8790f2f453cfbd0b880327b6eae16ca4f213",
+    "zh:f4a23ce27cb430f91895466b3e2d132c534fa2b58808f6771235d76e696f4972",
+    "zh:fd634e973eb2b6483a1ce9251801a393d04cb496f8e83ffcf3f0c4cad8c18f4c",
   ]
 }
 
 provider "registry.terraform.io/resinstack/linuxkit" {
-  version     = "0.0.4"
-  constraints = "0.0.4"
+  version     = "0.0.7"
+  constraints = "0.0.7"
   hashes = [
-    "h1:ma4oYKxXo4aInxp+q4i/mNLAKnSaPJRtn+4wU0cQhiQ=",
-    "zh:249824b41b4c7dcaee88950818e7e5aa621dc78486ee0a6f1551800be8d919a4",
+    "h1:QxuWOda+CjYo+z/wCGi+6QXPtnEO14OH+Fo24yJIzp8=",
+    "zh:5fd0118a5ba83e030e5d18fcfc5a082d65315f009f624e7324e75240d725644b",
   ]
 }
