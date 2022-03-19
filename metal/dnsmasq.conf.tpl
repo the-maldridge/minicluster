@@ -1,7 +1,7 @@
 keep-in-foreground
 log-queries
 log-facility=-
-interface=enp3s0
+interface=eno1
 no-resolv
 server=8.8.8.8
 enable-tftp
