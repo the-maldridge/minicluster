@@ -22,9 +22,9 @@ host-record=bootmaster.lan,${cidrhost(subnet,2)}
 host-record=metaldata.lan,${cidrhost(subnet,2)}
 
 %{ for hwaddr, host in hosts ~}
-dhcp-host=${lower(replace(hwaddr, "-", ":"))},${host.private-ipv4},${host.hostname}.lan
+dhcp-host=${lower(replace(hwaddr, "-", ":"))},${host.private-ipv4},${host.hostname}
 %{ endfor ~}
 
 %{ for host in hosts ~}
-host-record=${host.hostname}.lan,${host.private-ipv4}
+host-record=${host.hostname},${host.private-ipv4}
 %{ endfor ~}

@@ -10,8 +10,6 @@ module "aio_metadata" {
   consul_datacenter       = "minicluster"
   consul_bootstrap_expect = 1
 
-  vault_server = true
-
   nomad_server           = true
   nomad_datacenter       = "minicluster-control"
   nomad_bootstrap_expect = 1

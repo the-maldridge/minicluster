@@ -2,7 +2,7 @@ locals {
   hosts = {
 
     "00-23-24-5B-85-92" = {
-      hostname        = "node1"
+      hostname        = "node1.lan"
       private-ipv4    = "192.168.32.10"
       failure-domain  = "S1L"
       machine-type    = "m73-tiny"
@@ -11,7 +11,7 @@ locals {
     }
 
     "00-23-24-6C-68-5C" = {
-      hostname        = "node2"
+      hostname        = "node2.lan"
       private-ipv4    = "192.168.32.11"
       failure-domain  = "S1R"
       machine-type    = "m73-tiny"
@@ -20,7 +20,7 @@ locals {
     }
 
     "00-23-24-79-02-CB" = {
-      hostname        = "node3"
+      hostname        = "node3.lan"
       private-ipv4    = "192.168.32.12"
       failure-domain  = "S2L"
       machine-type    = "m73-tiny"
@@ -29,7 +29,7 @@ locals {
     }
 
     "00-23-24-64-1D-59" = {
-      hostname        = "node4"
+      hostname        = "node4.lan"
       private-ipv4    = "192.168.32.13"
       failure-domain  = "S2R"
       machine-type    = "m73-tiny"
@@ -38,7 +38,7 @@ locals {
     }
 
     "D8-CB-8A-20-92-E6" = {
-      hostname        = "node5"
+      hostname        = "node5.lan"
       private-ipv4    = "192.168.32.14"
       failure-domain  = "S3L"
       machine-type    = "m73-tiny"
@@ -47,7 +47,7 @@ locals {
     }
 
     "00-23-24-78-24-39" = {
-      hostname        = "node6"
+      hostname        = "node6.lan"
       private-ipv4    = "192.168.32.15"
       failure-domain  = "S3R"
       machine-type    = "m73-tiny"
@@ -56,7 +56,7 @@ locals {
     }
 
     "00-23-24-76-8B-ED" = {
-      hostname        = "node7"
+      hostname        = "node7.lan"
       private-ipv4    = "192.168.32.16"
       failure-domain  = "S4L"
       machine-type    = "m73-tiny"
@@ -65,7 +65,7 @@ locals {
     }
 
     "00-23-24-76-C6-A3" = {
-      hostname        = "node8"
+      hostname        = "node8.lan"
       private-ipv4    = "192.168.32.17"
       failure-domain  = "S4R"
       machine-type    = "m73-tiny"
@@ -74,7 +74,7 @@ locals {
     }
 
     "00-23-24-79-02-FA" = {
-      hostname        = "node9"
+      hostname        = "node9.lan"
       private-ipv4    = "192.168.32.18"
       failure-domain  = "S5L"
       machine-type    = "m73-tiny"
@@ -83,7 +83,7 @@ locals {
     }
 
     "00-23-24-69-DF-C4" = {
-      hostname        = "node10"
+      hostname        = "node10.lan"
       private-ipv4    = "192.168.32.19"
       failure-domain  = "S5R"
       machine-type    = "m73-tiny"
@@ -106,7 +106,7 @@ resource "local_file" "metadata" {
 resource "local_file" "shoelaces_mappings" {
   content = yamlencode({
     networkMaps  = [for host, attrs in local.hosts : { network = "${attrs.private-ipv4}/32", script = { name = "${attrs.role}.ipxe" } }]
-    hostnameMaps = [for host, attrs in local.hosts : { hostname = "${attrs.hostname}.lan", script = { name = "${attrs.role}.ipxe" } }]
+    hostnameMaps = [for host, attrs in local.hosts : { hostname = "${attrs.hostname}", script = { name = "${attrs.role}.ipxe" } }]
   })
 
   filename        = abspath(join("/", [path.root, "shoelaces_data", "mappings.yaml"]))

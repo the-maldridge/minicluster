@@ -4,7 +4,31 @@ mkdir -p state
 
 export CONSUL_HTTP_ADDR=http://node1:8500
 export NOMAD_ADDR=http://node1:4646
-export VAULT_ADDR=http://node1:8200
+export VAULT_ADDR=https://node1.lan:8200
+
+export VAULT_SKIP_VERIFY=true
+
+if [ ! -f state/vault_done ] ; then
+    if [ ! -f state/vault_bootstrap.json ] ; then
+        while ! vault operator init -format=json -n 1 -t 1 > state/vault_bootstrap.json ; do
+            sleep 5
+        done
+    fi
+
+    export VAULT_UNSEAL_KEY=$(jq -r .unseal_keys_hex[0] < state/vault_bootstrap.json)
+    vault operator unseal $VAULT_UNSEAL_KEY
+
+    export VAULT_TOKEN=$(jq -r .root_token < state/vault_bootstrap.json)
+    terraform apply -target=module.vault_base -auto-approve
+
+    vault token create -policy resin-nomad-server \
+          -period 72h -orphan \
+          -format json > state/vault_nomad_token.json
+
+    jq -r .auth.client_token < state/vault_nomad_token.json > secrets/resinstack-nomad-vault-token-minicluster
+
+    touch state/vault_done
+fi
 
 if [ ! -f state/consul_done ] ; then
     if [ ! -f secrets/resinstack-consul-gossip-key-minicluster ] ; then
@@ -32,37 +56,12 @@ if [ ! -f state/consul_done ] ; then
     jq -r .SecretID < state/consul_nomad_server.json > secrets/resinstack-nomad-server-consul-token-minicluster
     jq -r .SecretID < state/consul_nomad_client.json > secrets/resinstack-nomad-client-consul-token-minicluster
 
-    touch state/consul_done
-fi
-
-if [ ! -f state/vault_done ] ; then
-    if [ ! -f state/vault_bootstrap.json ] ; then
-        while ! vault operator init -format=json -n 1 -t 1 > state/vault_bootstrap.json ; do
-            sleep 5
-        done
-    fi
-
-    export VAULT_UNSEAL_KEY=$(jq -r .unseal_keys_hex[0] < state/vault_bootstrap.json)
-    for i in 1 2 3 ; do
-        VAULT_ADDR=http://node$i:8200 vault operator unseal $VAULT_UNSEAL_KEY
-    done
-
-    export VAULT_TOKEN=$(jq -r .root_token < state/vault_bootstrap.json)
-    terraform apply -target=module.vault_base -auto-approve
-
     vault write consul/config/access \
           address=consul.service.consul:8500 \
           token=$(jq -r .SecretID < state/consul_vault_integration.json)
 
-    vault token create -policy resin-nomad-server \
-          -period 72h -orphan \
-          -format json > state/vault_nomad_token.json
-
-    jq -r .auth.client_token < state/vault_nomad_token.json > secrets/resinstack-nomad-vault-token-minicluster
-
-    touch state/vault_done
+    touch state/consul_done
 fi
-
 
 if [ ! -f state/nomad_done ] ; then
     nomad operator keygen > secrets/resinstack-nomad-gossip-key-minicluster

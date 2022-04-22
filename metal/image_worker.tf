@@ -11,7 +11,7 @@ module "worker" {
   nomad_client  = true
   enable_docker = true
   nomad_acl     = true
-  nomad_mkdirs  = [
+  nomad_mkdirs = [
     "/var/persist/volumes/void-packages",
     "/var/persist/volumes/waypoint",
   ]
