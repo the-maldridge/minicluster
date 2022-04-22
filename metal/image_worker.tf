@@ -4,11 +4,17 @@ module "worker" {
   enable_console = true
   enable_sshd    = true
   enable_ntpd    = true
+  enable_persist = true
+
+  system_format_cmd = ["/usr/bin/format", "-force", "/dev/sda"]
 
   nomad_client  = true
   enable_docker = true
   nomad_acl     = true
-  nomad_mkdirs  = ["/var/persist/volumes/void-packages"]
+  nomad_mkdirs  = [
+    "/var/persist/volumes/void-packages",
+    "/var/persist/volumes/waypoint",
+  ]
 
   nomad_vault_integration = true
 

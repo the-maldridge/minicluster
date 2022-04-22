@@ -4,6 +4,9 @@ module "aio_server" {
   enable_console = true
   enable_sshd    = true
   enable_ntpd    = true
+  enable_persist = true
+
+  system_format_cmd = ["/usr/bin/format", "-force"]
 
   consul_server = true
   consul_acl    = "deny"
