@@ -17,8 +17,10 @@ module "aio_server" {
   nomad_acl     = true
   nomad_mkdirs  = ["/var/persist/volumes/void-packages"]
 
-  vault_server = true
-  vault_agent = true
+  vault_server        = true
+  vault_agent         = true
+  vault_agent_role    = "aio"
+  vault_agent_address = "https://node1.lan:8200"
 
   output_to = "${path.root}/shoelaces_data/static"
   base_name = "aio"

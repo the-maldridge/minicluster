@@ -20,6 +20,10 @@ module "worker" {
 
   custom_files = [data.linuxkit_file.worker_kill_timeout.id]
 
+  vault_agent         = true
+  vault_agent_role    = "worker"
+  vault_agent_address = "https://node1.lan:8200"
+
   output_to = "${path.root}/shoelaces_data/static"
   base_name = "worker"
 
