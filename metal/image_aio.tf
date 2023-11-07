@@ -15,7 +15,6 @@ module "aio_server" {
   nomad_client  = true
   enable_docker = true
   nomad_acl     = true
-  nomad_mkdirs  = ["/var/persist/volumes/void-packages"]
 
   vault_server        = true
   vault_agent         = true
